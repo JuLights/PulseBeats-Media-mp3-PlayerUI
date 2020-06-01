@@ -13,21 +13,27 @@
 2.2) Manage Playlist ...
 2.3) Import Playlist გვაძლევს უფლებას ავირჩიოთ Folder სასურველი mp3 ფორმატის ფაილებით.
 2.4) Export playlist Desktop-ზე ქმნის Folder-ს სახელად Exported playlist და შიგნით ყრის ყველა იმ სიმღერას რაც გვაქვს player-ის playlist-ში.
+
 ![Playlist mgmt options](https://github.com/JuLights/PulseBeats-Media-mp3-PlayerUI/blob/master/playlist%20mgmt%20options.png)
 # 3. Equalizer
 ვმუშაობ ამაზე!
+
 ![Equalizer options](https://github.com/JuLights/PulseBeats-Media-mp3-PlayerUI/blob/master/Equalizer%20options.png)
 # 4. Tools
 4.1) Media converter
 4.2) Effects and filters
 4.3) Preferences
+
 ![Tools options](https://github.com/JuLights/PulseBeats-Media-mp3-PlayerUI/blob/master/Tools%20options.png)
 # 5. Help , კლიკისას ხსნის ქრომის ბრაუზერს და შედის ვებგვერდზე https://www.pulsebeats.com/Help .
+
 ![Help option](https://github.com/JuLights/PulseBeats-Media-mp3-PlayerUI/blob/master/Help%20option.png)
 # 6. Exit , თიშავს Pulse Beats-ს პროცესებიდან.
 # მუსიკის მოსმენისას:
 ჩნდება Time Trackbar,Volume Trackbar, დრო მუსიკის დაწყებიდან გასული და მუსიკის დამთავრებამდე დარჩენილი.
+
 ![Music playes](https://github.com/JuLights/PulseBeats-Media-mp3-PlayerUI/blob/master/onprocess.png)
 # ლოგო გაკეთებულია Figma-ში.
+
 ![Logo in figma](https://github.com/JuLights/PulseBeats-Media-mp3-PlayerUI/blob/master/player%20logo%20in%20figma.png)
 
