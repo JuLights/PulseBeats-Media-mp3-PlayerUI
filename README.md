@@ -6,6 +6,7 @@
 1.2) Open Folder ვირჩევთ სასურველ folder-ს, და ამ folder-ში არსებულ ყველა მუსიკას mp3 ფორმატისას გადმოიტანს ფლეილისტში.
 1.3) Open Disk გვიხსნის DVD Writer/CD Writer-ს.
 1.4) Open recent media გვიხსნის ბოლოს დაკრულ მუსიკებს.
+
 ![Media options](https://github.com/JuLights/PulseBeats-Media-mp3-PlayerUI/blob/master/Media%20options.png)
 # 2. Playlist managemenet:
 2.1) New Playlist გვაძლევს უფლებას ავირჩიოთ Folder სასურველი mp3 ფორმატის ფაილებით.
