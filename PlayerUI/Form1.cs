@@ -13,6 +13,8 @@ using WMPLib;
 using TagLib;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using NAudio;
+using NAudio.Wave;
 
 namespace PlayerUI
 {
@@ -96,7 +98,7 @@ namespace PlayerUI
 
                     musicNames.Add(withOutExt.ToUpper());
 
-                    if (Path.GetExtension(ext) == ".mp3")
+                    if (Path.GetExtension(ext) == ".mp3" || Path.GetExtension(ext)==".wav")
                     {
                         #region SavingInDB გავაუქმე :|
                         //MyConnectionDataContext db = new MyConnectionDataContext();
@@ -134,12 +136,18 @@ namespace PlayerUI
                         #endregion
 
                         #region მომაქ ფაილი საწყისი პოზიციიდან და ვაგდებ myPlaylist-ში დესკტოპზე
+                        try
+                        {
+                            string source = address[i];
 
-                        string source = address[i];
+                            FileInfo music = new FileInfo(source);
 
-                        FileInfo music = new FileInfo(source);
-
-                        music.CopyTo(destination);
+                            music.CopyTo(destination);
+                        }catch(Exception ex)
+                        {
+                            MessageBox.Show(this, ex.Message);
+                        }
+                        
 
                         #endregion
                     }
@@ -436,11 +444,30 @@ namespace PlayerUI
         #region ToolsSubMenu
         private void button15_Click(object sender, EventArgs e)
         {
-            //..
-            //Your Code
-            //..
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "mp3 File (*.mp3)|*.mp3";
+            if (open.ShowDialog() != DialogResult.OK) return;
+
+            string output = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + $"{open.SafeFileName}" + "-" + "converted.wav";
+            Mp3ToWav(open.FileName, output);
+
+            MessageBox.Show(this, $"default output Path: {output}","Conversion was successful!");
+
             hideSubMenu();
         }
+
+        //mp3 converter to wav file
+        private void Mp3ToWav(string mp3File, string output)
+        {
+            using (Mp3FileReader reader = new Mp3FileReader(mp3File))
+            {
+                using (WaveStream pcmStream = WaveFormatConversionStream.CreatePcmStream(reader))
+                {
+                    WaveFileWriter.CreateWaveFile(output, pcmStream);
+                }
+            }
+        }
+
 
         private void button14_Click(object sender, EventArgs e)
         {
@@ -534,6 +561,14 @@ namespace PlayerUI
             {
                 fileDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\myPlaylist\\" + droppedMusicName[ind] + ".mp3";
             }
+            else if (listMusic.SelectedItem != null)
+            {
+                fileDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\myPlaylist\\" + listMusic.SelectedItem + ".mp3";
+            }
+            else if (!isFromPlaylist)
+            {
+                fileDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\myPlaylist\\" + listMusic.SelectedItem + ".wav";
+            }
             else
             {
                 fileDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\myPlaylist\\" + listMusic.SelectedItem + ".mp3";
@@ -609,7 +644,14 @@ namespace PlayerUI
             timer3Calc();
 
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            axWindowsMediaPlayer1.URL = path + "\\myPlaylist\\" + listMusic.SelectedItem + ".mp3";
+            try
+            {
+                axWindowsMediaPlayer1.URL = path + "\\myPlaylist\\" + listMusic.SelectedItem + ".mp3";
+            }catch(Exception ex)
+            {
+                axWindowsMediaPlayer1.URL = path + "\\myPlaylist\\" + listMusic.SelectedItem + ".wav";
+            }
+            
             axWindowsMediaPlayer1.Ctlcontrols.play();
 
             str = listMusic.SelectedItem.ToString();

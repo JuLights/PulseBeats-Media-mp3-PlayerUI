@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelSideMenu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
             this.panelToolsSubMenu = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
@@ -67,7 +68,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.btnExit = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.panelToolsSubMenu.SuspendLayout();
@@ -101,6 +101,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 561);
             this.panel1.TabIndex = 0;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Sylfaen", 11.25F);
+            this.btnExit.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnExit.Location = new System.Drawing.Point(0, 807);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnExit.Size = new System.Drawing.Size(233, 45);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Exit";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnHelp
             // 
@@ -566,7 +583,6 @@
             // 
             // listMusic
             // 
-            this.listMusic.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.listMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.listMusic.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listMusic.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -602,24 +618,7 @@
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
-            // btnExit
-            // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Sylfaen", 11.25F);
-            this.btnExit.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnExit.Location = new System.Drawing.Point(0, 807);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(233, 45);
-            this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "Exit";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // panelSideMenu
+            // PanelSideMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -630,7 +629,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(950, 600);
-            this.Name = "panelSideMenu";
+            this.Name = "PanelSideMenu";
             this.Opacity = 0.98D;
             this.Text = "Pulse Beats";
             this.panel1.ResumeLayout(false);
