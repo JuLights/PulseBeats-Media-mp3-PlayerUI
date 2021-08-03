@@ -20,7 +20,7 @@
 
 ![Equalizer options](https://github.com/JuLights/PulseBeats-Media-mp3-PlayerUI/blob/master/Equalizer%20options.png)
 # 4. Tools
-4.1) Media converter
+4.1) Media converter .mp3 გადაყავს .wav ფაილში.
 4.2) Effects and filters
 4.3) Preferences
 
